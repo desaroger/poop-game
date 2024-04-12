@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  next-app:
+    container_name: next-app
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./app:/app/app
+      - ./components:/app/components
+      - ./hooks:/app/hooks
+    restart: always
+    ports:
+      - 3000:3000
